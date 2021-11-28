@@ -1,3 +1,13 @@
+$main-color: #1eacc7;
+$second-color: #ff5656;
+
+@mixin btn_hover {
+  &:hover {
+    background-image: none;
+    background-color: $main-color;
+  }
+}
+
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -17,6 +27,12 @@
   text-align: center;
 }
 
+.label_white {
+  width: 75px;
+  background-color: #fff;
+  color: #000;
+}
+
 .title {
   margin-bottom: 0;
   margin-top: 38px;
@@ -27,12 +43,20 @@
   text-align: center;
 }
 
+.title_white {
+  color: #fff;
+}
+
 .subtitle {
   margin-top: 19px;
   color: #222;
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+}
+
+.subtitle_white {
+  color: #fff;
 }
 
 // ----------------------------------------------------------------
@@ -113,6 +137,7 @@ nav {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
+    @include btn_hover;
   }
 }
 
@@ -163,6 +188,7 @@ nav {
   font-weight: 400;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
   text-transform: uppercase;
+  @include btn_hover;
 }
 
 // ----------------------------------------------------------------
@@ -184,7 +210,7 @@ nav {
     margin-right: 26px;
     width: 113px;
     height: 113px;
-    background-color: #1eacc7;
+    background-color: $main-color;
     border-radius: 100%;
   }
 
@@ -193,7 +219,7 @@ nav {
 
     .reasons_subtitle {
       line-height: 21px;
-      color: #1eacc7;
+      color: $main-color;
       font-size: 17px;
       font-weight: 400;
     }
@@ -302,6 +328,170 @@ nav {
 
 // ----------------------------------------------------------------
 
+.require {
+  padding: 68px 0 84px 0;
+  &__block {
+    margin: 33px 0;
+    &__nmb {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #1CA8C3;
+  }
+  &__list {
+    list-style-type: none;
+    padding-left: 50px;
+    
+    margin-top: 22px;
+    li {
+      position: relative;
+      color: #222;
+      font-size: 17px;
+      line-height: 24px;
+      margin-bottom: 10px;
+      &::before {
+        position: absolute;
+        top: 3px;
+        left: -33px;
+        content: '';
+        display: block;
+        width: 21px;
+        height: 20px;
+        background: url('../icons/check_blue.svg') center (center / cover) no-repeat;
+      }
+    }
+  }
+  &__descr {
+    font-size: 17px;
+    line-height: 24px;
+    color: #1CA8C3;
+  }
+  .warning {
+    .require__title {
+      color: #FF5656;
+    }
+    .require__list {
+      li {
+        &::before {
+          background: url('../icons/check_red.svg') center (center / cover) no-repeat;
+        }
+      }
+    }
+  }  
+}
 
+.world {  
+	position: relative;
+	min-height: 717px;
+	padding: 49px 0;
+	background: url('../img/bg/map.jpg') center (center / cover) no-repeat;
+	&_link {    
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 49px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 68px;
+		text-transform: uppercase;
+		color: #1fbad6;
+		&:hover {      
+			text-decoration: none;
+			color: #fff;
+    }
+  }
+}
+
+
+footer {  
+	padding: 14px 23px 39px 23px;
+	a {    
+		&:hover {      
+    text-decoration: none;
+    }
+  }
+}
+
+.footer {  
+	&_divider {    
+    width: 299px;
+    height: 4px;
+    background-color: #1fbad6;
+    margin: 0 auto;
+  }
+  &_wrapper {    
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 32px;
+  }
+  &_wrapper > div {    
+    width: 33%;
+    &:nth-child(3) {      
+      display: flex; 
+      justify-content: flex-end;
+    }
+  }
+  &_social {    
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    &_item {      
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      margin: 0 4px;
+      width: 32px;
+      height: 32px;
+      background-color: #070716;
+      border-radius: 100%;
+      i {
+        color: #fff;
+      }
+    }
+  }
+    
+  &_links {    
+    width: 390px;
+    margin: 0 auto;
+    &_main {      
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      a {        
+        color: #070716;
+        font-size: 15px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+    &_sub {      
+      display: flex; 
+      justify-content: space-between;
+      margin-top: 10px;
+      a {        
+        color: #999999;
+        font-size: 11px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+    &_lang {      
+      display: block; 
+      margin: 0 auto;
+      color: #1fbad6;
+      font-size: 11px;
+      font-weight: 400;
+      margin-top: 19px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
 	
 
